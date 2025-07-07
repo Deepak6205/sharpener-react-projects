@@ -5,27 +5,27 @@ import Meals from './components/Meals/Meals'
 import Cart from './components/Cart/Cart'
 import CartProvider from './store/CartProvider'
 
+
 function App() {
-  const [cartIsShown,setcartIsShown] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
-  const showCartHandler = ()=>{
-    setcartIsShown(true);
-  }
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
 
-  const hideCartHandler = () =>{
-    setcartIsShown(false);
-  }
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler}/>}
-
-      <Header onShowCart={showCartHandler}/>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
       <main>
-        <Meals/>
+        <Meals />
       </main>
     </CartProvider>
-  )
+  );
 }
 
-export default App
+export default App;
